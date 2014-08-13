@@ -47,3 +47,5 @@ gem 'devise', '~> 3.0.0'
 gem 'autoprefixer-rails'
 
 gem 'polylines'
+
+gem 'rails_12factor'
