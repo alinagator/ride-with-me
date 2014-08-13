@@ -1,0 +1,35 @@
+<h1><%= @ride.name %>
+<%= link_to "Join", join_ride_path(@ride), method: :put, :class => "btn btn-info" %>
+<%= link_to "Edit", edit_ride_path(@ride), :class => "btn btn-info" %>
+</h1>
+<p><i>Organised by <%= link_to @ride.user.email, user_path(@ride.user) %></i></p>
+<p><%= @ride.description %></p>
+<%= image_tag @ride.map %>
+<p><%= @ride.distance %><p>
+
+<h4>Riders</h4>
+
+<ul>
+	<% @ride.users.each do |user| %>
+		<li><%= user.email %></li>
+	<% end %>
+</ul>
+
+<br>
+
+<h4>Comments</h4><br>
+
+<%= form_for [@ride, @comment] do |f| %>
+	<p>
+		<%= f.text_area :post, placeholder: "Add a comment...", :rows => 2, :cols => 90 %>
+	</p>
+	<%= f.submit 'Submit', :class => "btn btn-default" %>
+<% end %>
+
+<br>
+
+<ul class="comments">
+	<% @ride.comments.each do |comment| %>
+		<li><%= "#{comment.user.try(:email)} posted: #{comment.post}" %></li>
+	<% end %>
+</ul>

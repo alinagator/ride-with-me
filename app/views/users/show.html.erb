@@ -1,0 +1,6 @@
+<% @user.rides.each do |ride| %>
+	<section>
+		<h3><%= link_to ride.name, ride %></h3>
+		<p><%= ride.description %> </p>
+	</section>
+<% end %>

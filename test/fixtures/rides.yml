@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  map: MyString
+  distance: 1.5
+  date: 2014-08-04
+  time: 2014-08-04 21:20:53
+  avg_rating: 1.5
+
+two:
+  name: MyString
+  description: MyText
+  map: MyString
+  distance: 1.5
+  date: 2014-08-04
+  time: 2014-08-04 21:20:53
+  avg_rating: 1.5
