@@ -2,7 +2,7 @@
 <%= link_to "Join", join_ride_path(@ride), method: :put, :class => "btn btn-info" %>
 <%= link_to "Edit", edit_ride_path(@ride), :class => "btn btn-info" %>
 </h1>
-<p><i>Organised by <%= link_to @ride.user.email, user_path(@ride.user) %></i></p>
+<p><i>Organised by <%= link_to @ride.user.username, user_path(@ride.user) %></i></p>
 <p><%= @ride.description %></p>
 <%= image_tag @ride.map %>
 <p><%= @ride.distance %><p>
@@ -11,7 +11,7 @@
 
 <ul>
 	<% @ride.users.each do |user| %>
-		<li><%= user.email %></li>
+		<li><%= link_to @ride.user.username, user_path(@ride.user) %></li>
 	<% end %>
 </ul>
 
@@ -30,6 +30,9 @@
 
 <ul class="comments">
 	<% @ride.comments.each do |comment| %>
-		<li><%= "#{comment.user.try(:email)} posted: #{comment.post}" %></li>
+		<li><b><%= link_to @ride.user.username, user_path(@ride.user)%></b><br>
+			<i class="text-muted"><%= "#{comment.created_at.strftime("%d %b, %Y")}" %> at <%= "#{comment.created_at.strftime("%H:%M")}" %></i><br>
+			<%= "#{comment.post}" %></li><br>
 	<% end %>
 </ul>
+

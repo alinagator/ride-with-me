@@ -7,5 +7,6 @@ class CommentsController < ApplicationController
 		else
 			redirect_to new_user_session_path, alert: "Please log-in or sign-up to leave a comment."
 		end
+
 	end
 end
