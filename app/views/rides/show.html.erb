@@ -1,11 +1,14 @@
-<h1><%= @ride.name %>
-<%= link_to "Join", join_ride_path(@ride), method: :put, :class => "btn btn-info" %>
-<%= link_to "Edit", edit_ride_path(@ride), :class => "btn btn-info" %>
+<h1>
+	<%= @ride.name %>
+	<%= link_to "Join", join_ride_path(@ride), method: :put, :class => "btn btn-info" %>
+	<%= link_to "Edit", edit_ride_path(@ride), :class => "btn btn-info" %>
 </h1>
+
 <p><i>Organised by <%= link_to @ride.user.username, user_path(@ride.user) %></i></p>
 <p><%= @ride.description %></p>
-<%= image_tag @ride.map %>
 <p><%= @ride.distance %><p>
+
+<%= image_tag @ride.map %>
 
 <h4>Riders</h4>
 
@@ -13,9 +16,7 @@
 	<% @ride.users.each do |user| %>
 		<li><%= link_to @ride.user.username, user_path(@ride.user) %></li>
 	<% end %>
-</ul>
-
-<br>
+</ul><br>
 
 <h4>Comments</h4><br>
 
@@ -30,7 +31,7 @@
 
 <ul class="comments">
 	<% @ride.comments.each do |comment| %>
-		<li><b><%= link_to @ride.user.username, user_path(@ride.user)%></b><br>
+		<li><b><%= link_to "#{comment.user.username}", user_path(@ride.user)%></b><br>
 			<i class="text-muted"><%= "#{comment.created_at.strftime("%d %b, %Y")}" %> at <%= "#{comment.created_at.strftime("%H:%M")}" %></i><br>
 			<%= "#{comment.post}" %></li><br>
 	<% end %>
