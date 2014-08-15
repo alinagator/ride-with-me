@@ -49,3 +49,5 @@ gem 'autoprefixer-rails'
 gem 'polylines'
 
 gem 'rails_12factor'
+
+gem 'mandrill_mailer'

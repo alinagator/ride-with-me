@@ -1,9 +1,6 @@
 Welcome to Ride With Me
 ===============================================
  
-You have successfully signed up to Ride With Me,
-your username is: <%= @user.login %>.
+Come join this ride: <%= link_to ride.name, ride %>.
  
-To login to the site, just follow this link: <%= new_user_session_url %>.
- 
-Thanks for joining and have a great day!
+<%= @ride.user.%>
