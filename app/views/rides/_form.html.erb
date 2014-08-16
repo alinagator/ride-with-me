@@ -1,29 +1,30 @@
-<%= form_for @ride do |f| %>
+<%= form_for @ride do |f| %><br>
 	<fieldset>
 		<div class='fields'>
-			<%= f.label :name %>
-			<%= f.text_field :name %>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %><br><br>
 		</div>
 		<div class='fields'>
-			<%= f.label :description %>
-			<%= f.text_field :description %>
+			<%= f.label :description %><br>
+			<%= f.text_field :description %><br><br>
 		</div>
 		<div class='fields'>
-			<%= f.label :distance %>
-			<%= f.text_field :distance %>
+			<%= f.label :distance %><br>
+			<%= f.text_field :distance %><br><br>
 		</div>
 		<div class='fields'>
-			<%= f.label :map %>
-			<%= f.text_field :map %>
+			<%= f.label :map %><br>
+			<%= f.text_field :map %><br><br>
 		</div>
 		<div class='fields'>
-			<%= f.label :date %>
-			<%= f.text_field :date %>
+			<%= f.label :date %><br>
+			<%= f.text_field :date %><br><br>
 		</div>
 		<div class='fields'>
-			<%= f.label :time %>
-			<%= f.text_field :time %>
+			<%= f.label :time %><br>
+			<%= f.text_field :time %><br><br>
 		</div>
 	</fieldset>	
-	<%= f.submit %>
+	<div><%= f.submit "Submit", :class => "btn btn-success" %></div><br>
+
 <% end %>

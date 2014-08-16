@@ -1,4 +1,7 @@
 class Ride < ActiveRecord::Base
+
+	letsrate_rateable "rating"
+
 	belongs_to :user
 	has_many :ratings
 	has_many :comments

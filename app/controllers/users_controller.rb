@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	# POST /users
   	# POST /users.json
  	def create
+ 		
     @user = User.new(params[:user])
  
     respond_to do |format|
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+  #   UserMailer.foobar_email(@user).deliver
 	end
 
 end

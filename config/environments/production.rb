@@ -80,5 +80,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'ridewith-me.herokuapp.com' }
+  config.action_mailer.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['HEROKU_USER'],
+    :password =>       ENV['HEROKU_PASS'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+  }
+  
+  # config.action_mailer.default_url_options = { host: 'ridewith-me.herokuapp.com' }
+
 end

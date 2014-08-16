@@ -21,14 +21,14 @@ module FinalProject
     # config.i18n.default_locale = :de
   end
 
-  ActionMailer::Base.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      "app28455885@heroku.com",
-    :password =>       "fDUvpyEjJJ37mnz7TXYUHg",
-    :domain =>         'heroku.com',
-    :authentication => :plain
-  }
+  # ActionMailer::Base.smtp_settings = {
+  #   :port =>           '587',
+  #   :address =>        'smtp.mandrillapp.com',
+  #   :user_name =>      ENV['HEROKU_USER'],
+  #   :password =>       ENV['HEROKU_PASS'],
+  #   :domain =>         'localhost',
+  #   :authentication => :plain
+  # }
 
   ActionMailer::Base.delivery_method = :smtp
 end
