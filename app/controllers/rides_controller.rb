@@ -18,7 +18,7 @@ class RidesController < ApplicationController
 	end
 
 	def create #saves to database (req'd as well as 'new' method)
-		@ride = current_user.rides.new(safe_ride_params)
+		@ride = current_user.rides.build(safe_ride_params)
 
 		if @ride.save
 			redirect_to @ride
@@ -54,7 +54,7 @@ class RidesController < ApplicationController
 		end
 
 		def safe_ride_params
-			params.require('ride').permit(:name, :description, :map)
+			params.require(:ride).permit(:name, :description, :map, :distance, :date, :time)
 		end
 
 		def check_ownership

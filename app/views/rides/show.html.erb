@@ -1,5 +1,5 @@
 <h1>
-	<%= @ride.name %>
+	<%= @ride.name %> (<%= @ride.distance %>km)
 	<%= link_to "Join", join_ride_path(@ride), method: :put, :class => "btn btn-info" %>
 	<%= link_to "Edit", edit_ride_path(@ride), :class => "btn btn-info" %>
 </h1>
@@ -10,6 +10,7 @@
 
 <%= image_tag @ride.map %>
 
+<br>
 <h4>Riders</h4>
 
 <ul>
